@@ -1,4 +1,4 @@
-map=20
+map=test
 comment="test"
 file=hw1.cpp
 
@@ -6,7 +6,7 @@ echo -e $comment >> info.txt
 
 g++ -std=c++17 -O3 -pthread -fopenmp $file -o hw1
 
-./hw1 samples/$map.txt > answer.txt 2>> info.txt
+OMP_NUM_THREADS=6  ./hw1 samples/$map.txt > answer.txt 2>> info.txt
 
 echo -e "" >> info.txt
 
